@@ -1,0 +1,19 @@
+# Ignorar arquivos compilados
+*.pyc
+*.class
+*.o
+*.exe
+
+# Ignorar dependências
+node_modules/
+venv/
+.venv/
+
+# Ignorar configurações do VS Code
+.vscode/
+
+# Ignorar arquivos de Jupyter Notebook Checkpoints
+*.ipynb_checkpoints
+
+# Ignorar cache do sistema
+__pycache__/
