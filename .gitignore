@@ -8,6 +8,8 @@
 node_modules/
 venv/
 .venv/
+dsemproducao/
+.dsemproducao/
 
 # Ignorar configurações do VS Code
 .vscode/
