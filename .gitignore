@@ -10,6 +10,12 @@ venv/
 .venv/
 dsemproducao/
 .dsemproducao/
+webapp
+.webapp/
+rossmann-webapp
+.rossmann-webapp/
+rossmann-telegram-api/
+.rossmann-telegram-api/
 
 # Ignorar configurações do VS Code
 .vscode/
