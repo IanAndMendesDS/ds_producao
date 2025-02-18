@@ -19,12 +19,6 @@ A Rossmann opera mais de 3.000 farmácias em 7 países da Europa. Como parte de 
 2. O CFO precisa de flexibilidade para analisar cada loja individualmente.
 3. Dias em que as lojas estiveram fechadas são excluídos das previsões.
 4. Apenas lojas com vendas maiores que zero no histórico são consideradas.
-5. Critérios financeiros para elegibilidade à reforma:
-    - **Aprovação da Reforma:** Lojas com receita média prevista ≥ receita média histórica.
-    - **Alocação de Orçamento:**
-      - Desvio <2.5% → 7.5% da receita total.
-      - Desvio entre 2.5%–5% → 10% da receita total.
-      - Desvio >5% → 12.5% da receita total.
 
 ## 2.1 Descrição dos Dados
 | Atributo | Descrição |
