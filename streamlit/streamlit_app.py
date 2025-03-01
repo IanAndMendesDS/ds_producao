@@ -36,6 +36,8 @@ portfolio_url = "https://ianandmendesds.github.io/portifolio_projetos/"
 # Adicionando os botões estilizados com FontAwesome na sidebar
 # Adicionando os botões estilizados com FontAwesome na sidebar
 with st.sidebar:
+    st.subheader('Saiba mais em:')
+    st.write('\n')
     st.markdown(f"""
         <style>
             .btn {{
@@ -76,13 +78,6 @@ with st.sidebar:
             <i class="fa-solid fa-folder-open"></i> Portfólio
         </a>
     """, unsafe_allow_html=True)
-
-# with st.sidebar:
-#    st.subheader('Saiba mais em:')
-#    st.write('\n')
-#    st.link_button('Github', github_url)
-#    st.link_button('LinkedIn', linkedin_url)
-#    st.link_button('Meu Portfolio', portfolio_url)
 
 #------ Run Navigation ------
 
