@@ -4,9 +4,9 @@ from functions import load_dataset, convert_df, negocio, predict
 
 
 # ----- Dataset Imports ------
-test = pd.read_csv('test.csv', low_memory=False)
-store = pd.read_csv('store.csv', low_memory=False)
-train = pd.read_csv('train.csv', low_memory=False)
+test = pd.read_csv('datasets/test.csv', low_memory=False)
+store = pd.read_csv('datasets/store.csv', low_memory=False)
+train = pd.read_csv('datasets/train.csv', low_memory=False)
 
 
 st.title('Previsão de Vendas')
