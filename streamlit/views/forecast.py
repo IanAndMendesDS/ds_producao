@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from functions import load_dataset, convert_df, negocio, predict
+from functions import load_dataset, convert_df, predict
 import time
 
 

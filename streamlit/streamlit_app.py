@@ -28,13 +28,12 @@ pg = st.navigation(
 
 # ------ Side Bar ----------
 
-# URLs dos seus perfis
+# URLs 
 github_url = "https://github.com/IanAndMendesDS/ds_producao"
 linkedin_url = "https://www.linkedin.com/in/ian-andrade/"
 portfolio_url = "https://ianandmendesds.github.io/portifolio_projetos/"
 
-# Adicionando os botões estilizados com FontAwesome na sidebar
-# Adicionando os botões estilizados com FontAwesome na sidebar
+
 with st.sidebar:
     st.subheader('Saiba mais em:')
     st.write('\n')

@@ -69,34 +69,3 @@ def load_dataset(store_id, test: pd.DataFrame, store: pd.DataFrame):
     return data
 
     
-def negocio(predict: pd.DataFrame, train: pd.DataFrame) -> pd.DataFrame:
-    
-    predictions = round(predict[['store', 'prediction']].groupby('store').agg(['mean', 'sum']).reset_index(),2)
-    predictions.columns = ['store', 'prediction_mean', 'prediction_sum']
-    
-    df_treino = train.loc[train['store'].isin(predictions['store'])]
-    df_treino = round(df_treino[['store', 'Sales']].groupby('store').mean().reset_index(),2)
-    df_treino.columns = ['store', 'sales_mean']
-    
-    df_final = df_treino.merge(predictions, how='left', on='store')
-    df_final['reforma'] = df_final.apply(lambda x: 1 if x['prediction_mean'] > x['sales_mean'] else 0, axis=1)
-    
-    df_final = df_final.loc[df_final['reforma'] == 1]
-    
-    if df_final.empty:
-        st.text("Infelizmente as lojas selecionadas não atendem aos critérios de realização da reforma")
-        return df_final
-    else:
-        df_final['porcentagem'] = ((df_final['prediction_mean'] / df_final['sales_mean']) - 1)
-    
-        df_final['porcetagem_orcamento'] = df_final['porcentagem'].apply(lambda x : 0.075 if x < 0.025
-                                                                            else 0.1 if x < 0.05
-                                                                            else 0.125)
-        
-        df_final['orcamento'] = round(df_final['prediction_sum']*df_final['porcetagem_orcamento'],2)
-        
-        df_final = df_final.drop(columns=['reforma','porcentagem'], axis=1)
-        
-        st.dataframe(df_final)
-        return df_final  
-    
