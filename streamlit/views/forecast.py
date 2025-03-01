@@ -13,7 +13,7 @@ train = pd.read_csv('datasets/train.csv', low_memory=False)
 st.title('Previsão de Vendas')
 
 
-store_id = st.multiselect('Escolha as Loja',test['Store'].unique())
+store_id = st.multiselect('Escolha a(s) loja(s):',test['Store'].unique())
 
 
 if st.button('Previsão'):
@@ -47,7 +47,7 @@ if st.button('Previsão'):
             df_final = df_final.loc[df_final['reforma'] == 1]
 
             if df_final.empty:
-                st.write("Infelizmente as lojas selecionadas não atendem aos critérios de realização da reforma")
+                st.write("Infelizmente nehuma loja atendem aos critérios de realização da reforma")
 
             else:
                 df_final['porcentagem'] = ((df_final['prediction_mean'] / df_final['sales_mean']) - 1)
@@ -64,7 +64,7 @@ if st.button('Previsão'):
 
                 st.write('''
                     Premissas de Negócio para a seleção das lojas:
-                    1. Se a média do faturamento predict_mean for menor do que a média das sales_mean, então não podemos fazer a reforma; caso contrário podemos fazer a reforma.
+                    1. Se a média do faturamento de 'predict_mean' for menor do que a média de 'sales_mean', então não podemos fazer a reforma; caso contrário podemos fazer a reforma.
                     2. Se a diferença do faturamento previsto for menor do que 2,5%, pode-se utilizar 7,5% do faturamento total para a reforma. Se estiver entre 2,5% e 5%, utiliza-se 10%; se for superior a 5%, utiliza-se 12,5% do faturamento.
                     
                     As lojas selecionadas são:
