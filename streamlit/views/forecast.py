@@ -4,9 +4,9 @@ from functions import load_dataset, convert_df, negocio, predict
 
 
 # ----- Dataset Imports ------
-test = pd.read_csv('../datasets/test.csv', low_memory=False)
-store = pd.read_csv('../datasets/store.csv', low_memory=False)
-train = pd.read_csv('../datasets/train.csv', low_memory=False)
+test = pd.read_csv('test.csv', low_memory=False)
+store = pd.read_csv('store.csv', low_memory=False)
+train = pd.read_csv('train.csv', low_memory=False)
 
 
 st.title('Previsão de Vendas')
@@ -16,13 +16,10 @@ store_id = st.multiselect('Escolha as Loja',test['Store'].unique())
 
 
 if st.button('Previsão'):
-    # predictions = get_predictions(load_dataset2(store_id, test, store))
     data = load_dataset(store_id, test, store)
 
     if data != 'error':
         predictions = predict(data)
-
-        #d2 = predictions[['store', 'prediction']].groupby('sto4re').sum().reset_index()
 
         d2 = round(predictions[['store', 'prediction']].groupby('store').agg(['mean', 'sum']).reset_index(),2)
         d2.columns = ['store', 'prediction_mean', 'prediction_sum']
@@ -70,21 +67,3 @@ if st.button('Previsão'):
         
     else:
         st.write('Store not available')
-
-
-
-# store_ids = st.multiselect('Escolha as Lojas',test['Store'].unique())
-
-# if st.button('Predict '):
-#         predictions = get_predictions(load_dataset(store_ids, test, store))
-        
-#         data_csv = negocio(predictions, train)
-        
-#         csv = convert_df(data_csv)
-        
-#         # download
-#         st.download_button(
-#         label="Download CSV",
-#         data= csv,
-#         file_name='orçamento.csv',
-#         mime='text/csv')
