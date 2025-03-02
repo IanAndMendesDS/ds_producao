@@ -4,8 +4,7 @@
 
 Este projeto utiliza dados extraídos e processados a partir dos dados públicos em: [Kaggle: Rossmann Store Sales](https://www.kaggle.com/c/rossmann-store-sales/data)
 
-A API de previsão está hospedada no [Render](https://render.com/)
-Além disso, um bot do Telegram está disponível pelo nome de usuário @predicao_warning_bot (RossmannBot).
+O Projeto em Produção está na propria nuvem do [Streamlit](https://rossmann-forecast.streamlit.app). A API que realiza as predições foi disponibilizada no [Render](https://render.com/)
 
 # 1.0 Problema de Negócio
 
