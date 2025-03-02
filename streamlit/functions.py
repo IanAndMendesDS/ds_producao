@@ -50,7 +50,8 @@ def load_dataset(store_id, test: pd.DataFrame, store: pd.DataFrame):
     df_test = pd.merge(test, store, how='left', on='Store')
 
     # choose store for prediction
-    df_test = df_test[df_test['Store'].isin(store_id)]
+    #df_test = df_test[df_test['Store'].isin(store_id)]
+    df_test = df_test[df_test['Store'] == store_id]
 
     if not df_test.empty:
 
